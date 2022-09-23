@@ -1,0 +1,22 @@
+{
+  "name": "@dborysov/md-table",
+  "version": "1.0.0",
+  "description": "Parse md tables",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "git@github.com:dborysov/md-table.git",
+  "author": "Dmytro Borysov <4720760+dborysov@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "md",
+    "table",
+    "markdown",
+    "parse"
+  ]
+}
