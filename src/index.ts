@@ -13,7 +13,7 @@ type ExtractColumnNamesFromHeader<THeader extends string> = THeader extends "" ?
 
 type ExtractColumnNames<TTable extends string> = ExtractColumnNamesFromHeader<ExtractHeader<TTable>>;
 
-export const parseTable = <TTable extends string>(input: TTable): Record<ExtractColumnNames<TTable>, string>[] => {
+export const parseTable = <TTable extends string>(input: TTable): readonly Readonly<Record<ExtractColumnNames<TTable>, string>>[] => {
   const tableHeader = input.match(/^\s*(?<header>\|.*\|)\s*\r?\n(?<delimiter>[\s\|:\-]+)\r?\n(?<data>[\w\W]*)$/);
 
   if (!tableHeader?.groups) throw new Error("Invalid table");
