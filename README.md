@@ -1,15 +1,21 @@
 <div align="center">
   <a href="https://www.npmjs.com/package/@dborysov/md-table">
-    <img alt="npm" src="https://img.shields.io/npm/v/@dborysov/md-table.svg" />
+    <img alt="version" src="https://img.shields.io/npm/v/@dborysov/md-table.svg" />
   </a>
   <a href="https://npmjs.org/package/@dborysov/md-table">
-    <img alt="downloads" src="https://badgen.net/npm/dm/@dborysov/md-table" />
+    <img alt="license" src="https://badgen.net/npm/license/@dborysov/md-table" />
+  </a>
+  <a href="https://npmjs.org/package/@dborysov/md-table">
+    <img alt="downloads per week" src="https://badgen.net/npm/dw/@dborysov/md-table" />
   </a>
   <a href="https://bundlephobia.com/result?p=@dborysov/md-table">
-    <img alt="tree-shakeable" src="https://badgen.net/bundlephobia/tree-shaking/@dborysov/md-table" />
+    <img alt="minzipped size" src="https://badgen.net/bundlephobia/minzip/@dborysov/md-table" />
   </a>
   <a href="https://npmjs.org/package/@dborysov/md-table">
     <img alt="types included" src="https://badgen.net/npm/types/@dborysov/md-table" />
+  </a>
+  <a href="https://npmjs.org/package/@dborysov/md-table">
+    <img alt="dependency count" src="https://badgen.net/bundlephobia/dependency-count/@dborysov/md-table" />
   </a>
 </div>
 
@@ -56,7 +62,7 @@ const users = parseTable(`
   | 2   | Jane | SomeOtherMiddleName | Doe      | jane.doe@example.com | 56-47-78-910   |
 `);
 ```
-
+u
 ### Yeah, but typings?..
 
 I love typescript for so many things, for example for working with string literals. In the previous example the type of `users` is `Record<"id" | "name" | "middleName" | "lastName" | "email" | "phoneNumber", string>[]`
