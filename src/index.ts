@@ -12,10 +12,7 @@ type ParseTableReturnType<
   ? TransposedTableReturnType<TTable>
   : RegularTableReturnType<TTable>;
 
-export const parseTable = <
-  TTable extends string,
-  TConfig extends { transpose: boolean } | undefined = undefined,
->(
+export const parseTable = <TTable extends string, TConfig extends { transpose: boolean }>(
   input: TTable,
   config?: TConfig,
 ): ParseTableReturnType<TTable, TConfig> =>
