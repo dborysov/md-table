@@ -45,15 +45,29 @@ interface User {
 }
 
 const users: User[] = [
-  { id: 1, name: "John", lastName: "Doe", email: "john.doe@example.com", middleName: "SomeMiddleName", phoneNumber: "123-456-78-910" },
-  { id: 2, name: "Jane", middleName: "SomeOtherMiddleName", lastName: "Doe", email: "jane.doe@example.com", phoneNumber: "56-47-78-910" },
+  {
+    id: 1,
+    name: 'John',
+    lastName: 'Doe',
+    email: 'john.doe@example.com',
+    middleName: 'SomeMiddleName',
+    phoneNumber: '123-456-78-910',
+  },
+  {
+    id: 2,
+    name: 'Jane',
+    middleName: 'SomeOtherMiddleName',
+    lastName: 'Doe',
+    email: 'jane.doe@example.com',
+    phoneNumber: '56-47-78-910',
+  },
 ];
 ```
 
 But it can be done in a more readable way:
 
 ```ts
-import { parseTable } from "@dborysov/md-table";
+import { parseTable } from '@dborysov/md-table';
 
 const users = parseTable(`
   | id  | name | middleName          | lastName | email                | phoneNumber    |
@@ -62,8 +76,25 @@ const users = parseTable(`
   | 2   | Jane | SomeOtherMiddleName | Doe      | jane.doe@example.com | 56-47-78-910   |
 `);
 ```
-u
+
+If the table is getting wider, you can transpose it. No delimiter is needed in that case:
+
+```ts
+import { parseTable } from '@dborysov/md-table';
+
+const users = parseTable(
+  `
+  | id          | 1                    | 2                    |
+  | name        | John                 | Jane                 |
+  | middleName  | SomeMiddleName       | SomeOtherMiddleName  |
+  | lastName    | Doe                  | Doe                  |
+  | email       | john.doe@example.com | jane.doe@example.com |
+  | phoneNumber | 123-456-78-910       | 56-47-78-910         |
+`,
+  { transpose: true },
+);
+```
+
 ### Yeah, but typings?..
 
-I love typescript for so many things, for example for working with string literals. In the previous example the type of `users` is `Record<"id" | "name" | "middleName" | "lastName" | "email" | "phoneNumber", string>[]`
-
+I love typescript for so many things, for example for working with string literals. In the previous examples the type of `users` is `Record<"id" | "name" | "middleName" | "lastName" | "email" | "phoneNumber", string>[]`
