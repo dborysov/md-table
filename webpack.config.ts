@@ -1,10 +1,11 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
 
-const config = (): webpack.Configuration => ({
+const config: webpack.Configuration = {
   mode: process.env.NODE_ENV == 'production' ? 'production' : 'development',
   entry: './src/index.ts',
   output: {
+    library: 'mdTable',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -19,6 +20,6 @@ const config = (): webpack.Configuration => ({
   resolve: {
     extensions: ['.ts'],
   },
-});
+};
 
 export default config;
