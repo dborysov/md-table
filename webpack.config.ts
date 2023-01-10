@@ -5,7 +5,7 @@ const config: webpack.Configuration = {
   mode: process.env.NODE_ENV == 'production' ? 'production' : 'development',
   entry: './src/index.ts',
   output: {
-    library: 'mdTable',
+    library: { name: 'mdTable', type: 'umd' },
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
