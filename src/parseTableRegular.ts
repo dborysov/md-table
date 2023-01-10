@@ -17,6 +17,7 @@ export const parseTableRegular = <TTable extends string>(
     .map((columnName) => columnName.trim());
 
   return data
+    .trim()
     .split(/\r?\n/)
     .filter((row) => row)
     .map((row) =>
