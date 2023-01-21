@@ -1,6 +1,6 @@
 {
   "name": "@dborysov/md-table",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "sideEffects": false,
   "description": "Parse md tables",
   "main": "dist/main.js",
