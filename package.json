@@ -3,8 +3,11 @@
   "version": "1.0.14",
   "sideEffects": false,
   "description": "Parse md tables",
-  "main": "dist/node.js",
-  "browser": "dist/browser.js",
+  "exports": {
+    "import": "./dist/node-esm.js",
+    "require": "./dist/node-require.js",
+    "browser": "./dist/browser.js"
+  },
   "types": "dist/index.d.ts",
   "repository": "git@github.com:dborysov/md-table.git",
   "author": "Dmytro Borysov <4720760+dborysov@users.noreply.github.com>",

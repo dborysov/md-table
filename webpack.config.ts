@@ -18,13 +18,23 @@ const generalConfig: webpack.Configuration = {
   },
 };
 
-const nodeConfig: webpack.Configuration = {
+const nodeEsmConfig: webpack.Configuration = {
   ...generalConfig,
   target: 'node',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'node.js',
-    libraryTarget: 'umd',
+    filename: 'node-esm.js',
+    library: { type: 'commonjs-static' },
+  },
+};
+
+const nodeRequireConfig: webpack.Configuration = {
+  ...generalConfig,
+  target: 'node',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'node-require.js',
+    library: { name: 'mdTable', type: 'umd' },
   },
 };
 
@@ -41,4 +51,4 @@ const browserConfig: webpack.Configuration = {
   },
 };
 
-export default [nodeConfig, browserConfig];
+export default [nodeEsmConfig, browserConfig, nodeRequireConfig];
