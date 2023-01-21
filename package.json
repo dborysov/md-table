@@ -1,6 +1,6 @@
 {
   "name": "@dborysov/md-table",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "sideEffects": false,
   "description": "Parse md tables",
   "exports": {
