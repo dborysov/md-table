@@ -1,14 +1,9 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
 
-const config: webpack.Configuration = {
+const generalConfig: webpack.Configuration = {
   mode: process.env.NODE_ENV == 'production' ? 'production' : 'development',
   entry: './src/index.ts',
-  output: {
-    libraryTarget: 'umd',
-    globalObject: 'this',
-    path: path.resolve(__dirname, 'dist'),
-  },
   module: {
     rules: [
       {
@@ -23,4 +18,27 @@ const config: webpack.Configuration = {
   },
 };
 
-export default config;
+const nodeConfig: webpack.Configuration = {
+  ...generalConfig,
+  target: 'node',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'node.js',
+    libraryTarget: 'umd',
+  },
+};
+
+const browserConfig: webpack.Configuration = {
+  ...generalConfig,
+  target: 'web',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'browser.js',
+    libraryTarget: 'umd',
+    globalObject: 'this',
+    umdNamedDefine: true,
+    library: 'mdTable',
+  },
+};
+
+export default [nodeConfig, browserConfig];
