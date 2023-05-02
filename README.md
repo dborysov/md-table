@@ -21,7 +21,7 @@
 
 # md-table
 
-## [Demo](https://stackblitz.com/edit/typescript-cwyfnf?file=index.ts)
+## [Demo](https://stackblitz.com/edit/md-table-demo?file=index.ts)
 
 ## Install
 
