@@ -3,6 +3,8 @@
   "version": "1.0.15",
   "sideEffects": false,
   "description": "Parse md tables",
+  "main": "./dist/node-require.js",
+  "browser": "./dist/browser.js",
   "exports": {
     "import": "./dist/node-esm.js",
     "require": "./dist/node-require.js",
