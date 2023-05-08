@@ -15,7 +15,7 @@
   "author": "Dmytro Borysov <4720760+dborysov@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^18.11.18",
+    "@types/node": "^20.1.0",
     "@types/webpack": "^5.28.0",
     "rimraf": "^5.0.0",
     "ts-loader": "^9.4.2",
